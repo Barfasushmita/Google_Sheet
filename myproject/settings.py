@@ -14,7 +14,8 @@ SECRET_KEY = 'django-insecure-m!3(z=t3lvfnn9$((3fyg#c%6ihlhgwb=b)r3=#&s6(c(vam3a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['google-sheet-1waitress-serve-listen-0-0.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
