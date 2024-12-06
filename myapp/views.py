@@ -1,4 +1,5 @@
 import os
+import base64
 from django.http import JsonResponse
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -16,7 +17,24 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 SPREADSHEET_ID = "1CrYexLUTGyIStFdVUzrdJ8tKOFjcC56JuW4FCipxbB0"
 RANGE_NAME = "Form responses 1!A1:T1000"
 
+def decode_base64_to_file(encoded_str, file_path):
+    with open(file_path, 'wb') as f:
+        f.write(base64.b64decode(encoded_str))
+
 def get_spreadsheet_data():
+
+    google_credentials_base64 = os.getenv('GOOGLE_CREDENTIALS_BASE64')
+    google_token_base64 = os.getenv('GOOGLE_TOKEN_BASE64')
+
+    # Check if the environment variables are set
+    if google_credentials_base64 and google_token_base64:
+        # Decode and save the credentials and token files
+        if not os.path.exists(CREDENTIALS_PATH):
+            decode_base64_to_file(google_credentials_base64, CREDENTIALS_PATH)
+        
+        if not os.path.exists(TOKEN_PATH):
+            decode_base64_to_file(google_token_base64, TOKEN_PATH)
+
     credentials = None
     if os.path.exists(TOKEN_PATH):
         credentials = Credentials.from_authorized_user_file(TOKEN_PATH, SCOPES)
