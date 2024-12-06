@@ -25,7 +25,7 @@ def get_spreadsheet_data():
             credentials.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_PATH, SCOPES)
-            credentials = flow.run_local_server(port=0)
+            credentials = flow.run_console()
         with open(TOKEN_PATH, "w") as token:
             token.write(credentials.to_json())
 
