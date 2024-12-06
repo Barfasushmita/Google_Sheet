@@ -10,7 +10,7 @@ from django.shortcuts import render
 
 # Paths and constants
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials', 'client_secret.json')  # Use your OAuth Client ID file
+CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials', 'credentials.json')  # Use your OAuth Client ID file
 TOKEN_PATH = os.path.join(BASE_DIR, 'credentials', 'token.json')
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 SPREADSHEET_ID = "1CrYexLUTGyIStFdVUzrdJ8tKOFjcC56JuW4FCipxbB0"
