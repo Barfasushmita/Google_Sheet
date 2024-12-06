@@ -23,7 +23,7 @@ def decode_base64_to_file(encoded_str, file_path):
 
 def get_spreadsheet_data():
      google_credentials_base64 = os.getenv('GOOGLE_CREDENTIALS_BASE64')
-    google_token_base64 = os.getenv('GOOGLE_TOKEN_BASE64')
+     google_token_base64 = os.getenv('GOOGLE_TOKEN_BASE64')
 
     # Check if the environment variables are set
     if google_credentials_base64 and google_token_base64:
