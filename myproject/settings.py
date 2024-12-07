@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m!3(z=t3lvfnn9$((3fyg#c%6ihlhgwb=b)r3=#&s6(c(vam3a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'TRUE'
+DEBUG = 'False'
 
 
 ALLOWED_HOSTS = ['google-sheet-n148.onrender.com', 'localhost', '127.0.0.1']
